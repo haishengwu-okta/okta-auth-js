@@ -16,8 +16,8 @@
     "lint": "eslint .",
     "lint:report": "eslint -f checkstyle -o build2/reports/lint/eslint-checkstyle-result.xml .",
     "test": "jest test/spec/ --silent",
-    "test:report" : "yarn test --ci || true",
-    "build": "node ./writeConfig.js && webpack --config webpack.config.js",
+    "test:report": "yarn test --ci || true",
+    "build": "webpack --config webpack.config.js",
     "prepublish": "yarn build"
   },
   "author": "Okta",
@@ -36,9 +36,13 @@
     "xhr2": "0.1.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-flow": "^7.0.0",
+    "babel-loader": "^8.0.4",
     "eslint": "5.6.1",
     "jest": "^23.6.0",
-    "jest-junit": "^5.0.0",
+    "jest-junit": "^5.2.0",
     "jquery": "3.3.1",
     "json-loader": "0.5.4",
     "lodash": "4.17.11",
